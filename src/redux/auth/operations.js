@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Notiflix from 'notiflix';
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
@@ -13,23 +13,17 @@ const token = {
   },
 };
 
-const toastOptions = { position: 'top-center', autoClose: 3000 };
-
 const register = createAsyncThunk(
   'auth/register',
   async (user, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/signup', user);
       token.set(data.token);
-      toast.success(
-        'Registration succesfull. Welcome to phone book',
-        toastOptions
-      );
+      Notiflix.Notify.success('Registration succesfull. Welcome to phone book');
       return data;
     } catch (error) {
-      toast.error(
-        'Something went wrong. Please try again or log in',
-        toastOptions
+      Notiflix.Notify.failure(
+        'Something went wrong. Please try again or log in'
       );
       return rejectWithValue(error.message);
     }
@@ -42,15 +36,13 @@ const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/login', user);
       token.set(data.token);
-      toast.success(
-        'Log in successfull. Welcome back to your phone book',
-        toastOptions
+      Notiflix.Notify.success(
+        'Log in successfull. Welcome back to your phone book'
       );
       return data;
     } catch (error) {
-      toast.error(
-        'Not valid email or password. Please, try again or register new account',
-        toastOptions
+      Notiflix.Notify.failure(
+        'Not valid email or password. Please, try again or register new account'
       );
       return rejectWithValue('Not valid email or password. Please, try again');
     }
@@ -63,7 +55,7 @@ const logOut = createAsyncThunk(
     try {
       await axios.post('/users/logout');
       token.unset();
-      toast.success('Log out successfull. Come back sooner', toastOptions);
+      Notiflix.Notify.success('Log out successfull. Come back sooner');
     } catch (error) {
       token.unset();
       return rejectWithValue(error.message);
