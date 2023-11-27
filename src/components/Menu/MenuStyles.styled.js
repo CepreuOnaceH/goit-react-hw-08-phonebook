@@ -21,6 +21,6 @@ export const MenuStyles = styled.ul`
 
   button:hover,
   button:focus {
-    background-color: tomato;
+    background-color: green;
   }
 `;

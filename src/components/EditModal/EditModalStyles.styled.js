@@ -31,7 +31,7 @@ const EditModalStyles = styled.div`
     }
   }
   .first {
-    color: tomato;
+    color: green;
   }
 
   .user-info-container {
@@ -43,7 +43,7 @@ const EditModalStyles = styled.div`
   }
 
   .user-info-item {
-    color: tomato;
+    color: green;
   }
 
   .user-info-current {
@@ -62,7 +62,7 @@ const EditModalStyles = styled.div`
     height: 20px;
     border-radius: 50%;
     background-color: transparent;
-    color: tomato;
+    color: green;
     transition: 250ms linear;
   }
 

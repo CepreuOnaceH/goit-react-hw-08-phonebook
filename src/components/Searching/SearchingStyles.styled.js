@@ -7,7 +7,7 @@ export const SearchingStyles = styled.div`
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 99, 71, 0.75);
+  background-color: #698af0;
   border-radius: 12px;
   border: 1px solid black;
   margin-top: 8px;

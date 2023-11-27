@@ -26,28 +26,28 @@ const ContactsForm = () => {
 
   useEffect(() => {
     if (!name && !number) {
-      setNotify('Please, enter contact name and number to add');
+      setNotify('Enter name and number to create new contact.');
       setCanSubmit(false);
     } else if (name && name.length < 3) {
-      setNotify('Contact name should be 3 symbols minimum');
+      setNotify('Contact name should be 3 symbols minimum.');
       setCanSubmit(false);
     } else if (name && name.length > 16) {
-      setNotify('Contact name should be 16 symbols maximum');
+      setNotify('Contact name should be 16 symbols maximum.');
       setCanSubmit(false);
     } else if (name && !number) {
-      setNotify('Please add contact number');
+      setNotify('Add contact number.');
       setCanSubmit(false);
     } else if (name && number.length < 5) {
-      setNotify('Contact number should be 5 symbols minimum');
+      setNotify('Contact number should be 5 symbols minimum.');
       setCanSubmit(false);
     } else if (name && number.length > 16) {
-      setNotify('Contact number should be 16 symbols maximum');
+      setNotify('Contact number should be 16 symbols maximum.');
       setCanSubmit(false);
     } else if (number && !name) {
-      setNotify('Please, enter contact name');
+      setNotify('Enter contact name.');
       setCanSubmit(false);
     } else {
-      setNotify('You can add contact to your book');
+      setNotify('You can add new contact to your book.');
       setCanSubmit(true);
     }
   }, [name, number]);
@@ -60,20 +60,13 @@ const ContactsForm = () => {
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      Notiflix.Notify.failure(`${name} is alredy in your contacts`, {
-        position: 'top-center',
-        autoClose: 3000,
-      });
+      Notiflix.Notify.failure(`${name} is alredy in your contacts.`);
       return;
     } else if (
       contacts?.some(contact => contact.number.trim() === number.trim())
     ) {
       Notiflix.Notify.failure(
-        `The number ${number} is alredy in your contacts`,
-        {
-          position: 'top-center',
-          autoClose: 3000,
-        }
+        `The number ${number} is alredy in your contacts.`
       );
       return;
     }

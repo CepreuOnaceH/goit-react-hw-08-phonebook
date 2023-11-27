@@ -6,7 +6,7 @@ export const ContainerStyles = styled.div`
   }
 
   .notification {
-    color: tomato;
+    color: green;
     margin-top: 20px;
   }
   #fountainG {

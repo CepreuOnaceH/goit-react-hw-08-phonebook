@@ -19,11 +19,13 @@ const register = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/signup', user);
       token.set(data.token);
-      Notiflix.Notify.success('Registration succesfull. Welcome to phone book');
+      Notiflix.Notify.success(
+        'Registration succesfull. Welcome to phone book.'
+      );
       return data;
     } catch (error) {
       Notiflix.Notify.failure(
-        'Something went wrong. Please try again or log in'
+        'Something went wrong. Please try again or log in.'
       );
       return rejectWithValue(error.message);
     }
@@ -37,14 +39,14 @@ const logIn = createAsyncThunk(
       const { data } = await axios.post('/users/login', user);
       token.set(data.token);
       Notiflix.Notify.success(
-        'Log in successfull. Welcome back to your phone book'
+        'Log in successfull. Welcome back to your phone book.'
       );
       return data;
     } catch (error) {
       Notiflix.Notify.failure(
-        'Not valid email or password. Please, try again or register new account'
+        'Not valid email or password. Please, try again or register new account.'
       );
-      return rejectWithValue('Not valid email or password. Please, try again');
+      return rejectWithValue('Not valid email or password. Please, try again.');
     }
   }
 );
@@ -55,7 +57,7 @@ const logOut = createAsyncThunk(
     try {
       await axios.post('/users/logout');
       token.unset();
-      Notiflix.Notify.success('Log out successfull. Come back sooner');
+      Notiflix.Notify.success('Log out successfull.');
     } catch (error) {
       token.unset();
       return rejectWithValue(error.message);
@@ -79,7 +81,7 @@ const fetchCurrentUser = createAsyncThunk(
     } catch (error) {
       token.unset();
       return rejectWithValue(
-        'Auth state is old. Please enter to your personal cabinet again'
+        'Auth state is old. Please enter to your personal cabinet again.'
       );
     }
   }

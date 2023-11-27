@@ -3,8 +3,7 @@ import { styled } from 'styled-components';
 const ContactsFormStyles = styled.form`
   max-width: 600px;
   text-align: center;
-  border: 1px solid black;
-  border-radius: 20px;
+
   max-height: 300px;
   min-height: 200px;
   padding-top: 20px;
@@ -15,10 +14,9 @@ const ContactsFormStyles = styled.form`
 
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(244, 164, 96, 0.3);
 
   .first {
-    color: blue;
+    color: green;
   }
 
   .add-contact-label-container {
@@ -75,7 +73,7 @@ const ContactsFormStyles = styled.form`
 
   button:hover,
   button:focus {
-    background-color: tomato;
+    background-color: green;
   }
 
   button[disabled] {
@@ -91,7 +89,7 @@ const ContactsFormStyles = styled.form`
   }
 
   .notify.error {
-    color: red;
+    color: green;
   }
 `;
 

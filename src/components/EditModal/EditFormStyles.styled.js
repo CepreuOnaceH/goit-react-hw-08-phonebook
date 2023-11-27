@@ -76,7 +76,7 @@ export const EditFormStyles = styled.form`
 
   button:hover,
   button:focus {
-    background-color: tomato;
+    background-color: green;
   }
 
   button[disabled] {

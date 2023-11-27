@@ -4,13 +4,14 @@ export const ItemStyles = styled.li`
   border: 1px solid black;
   border-radius: 12px;
   display: flex;
-  padding: 8px 12px;
+  padding: 15px 120px;
   justify-content: space-between;
-  background-color: rgba(192, 192, 192, 0.6);
+  background-color: rgb(220 229 226 / 30%);
 
   .buttons-list {
     display: flex;
     column-gap: 16px;
+    list-style: none;
   }
 
   .button-item {
@@ -53,7 +54,7 @@ export const ItemStyles = styled.li`
   }
 
   .name {
-    color: tomato;
+    color: green;
     text-transform: capitalize;
   }
 

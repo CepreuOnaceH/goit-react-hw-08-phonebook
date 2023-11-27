@@ -55,7 +55,6 @@ const List = () => {
     const firstPage = paginationList?.firstElementChild.nextSibling;
     const endOffset = itemOffset + itemsPerPage;
 
-    console.log(endOffset);
     if (endOffset === itemsPerPage) {
       firstPage?.classList.add('active');
     } else {

@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { toast } from 'react-toastify';
-
-const toastOptions = { position: 'top-center', autoClose: 3000 };
+import Notiflix from 'notiflix';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -12,7 +10,7 @@ export const fetchContacts = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(
-        'Oops... Something went wrong =(. Please, reload page and try again'
+        'Oops... Something went wrong. Reload page and try again.'
       );
     }
   }
@@ -23,17 +21,16 @@ export const addContact = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const response = await axios.post(`/contacts/`, user);
-      toast.success('Contact has been added to your book', toastOptions);
+      Notiflix.Notify.success('Contact has been added to your book.');
 
       return response.data;
     } catch (error) {
-      toast.error(
-        'Oops... Something went wrong =(. Please, reload page and try again',
-        toastOptions
+      Notiflix.Notify.failure(
+        'Oops... Something went wrong. Reload page and try again.'
       );
 
       return rejectWithValue(
-        'Oops... Something went wrong =(. Please, reload page and try again'
+        'Oops... Something went wrong. Reload page and try again.'
       );
     }
   }
@@ -44,17 +41,16 @@ export const deleteContact = createAsyncThunk(
   async (userId, { rejectWithValue }) => {
     try {
       const response = await axios.delete(`/contacts/${userId}`);
-      toast.success('Contacts has been deleted from your book', toastOptions);
+      Notiflix.Notify.success('Contacts has been deleted from your book.');
 
       return response.data;
     } catch (error) {
-      toast.error(
-        'Oops... Something went wrong =(. Please, reload page and try again',
-        toastOptions
+      Notiflix.Notify.failure(
+        'Oops... Something went wrong. Reload page and try again.'
       );
 
       return rejectWithValue(
-        'Oops... Something went wrong =(. Please, reload page and try again'
+        'Oops... Something went wrong. Reload page and try again.'
       );
     }
   }
@@ -65,16 +61,14 @@ export const editContact = createAsyncThunk(
   async ({ id, name, number }, { rejectWithValue }) => {
     try {
       const response = await axios.patch(`/contacts/${id}`, { name, number });
-      toast.success('Contact has been edited. Thank you', toastOptions);
+      Notiflix.Notify.success('Contact has been edited.');
       return response.data;
     } catch (error) {
-      toast.error(
-        'Oops... Something went wrong =(. Please, reload page and try again',
-        toastOptions
+      Notiflix.Notify.failure(
+        'Oops... Something went wrong. Reload page and try again.'
       );
-      console.log('error');
       return rejectWithValue(
-        'Oops... Something went wrong =(. Please, reload page and try again'
+        'Oops... Something went wrong. Reload page and try again'
       );
     }
   }
