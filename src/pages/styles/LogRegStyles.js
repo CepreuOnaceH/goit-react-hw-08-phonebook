@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoegRegStyles = styled.section`
+export const LogRegStyles = styled.section`
   text-align: center;
   padding-top: 50px;
 

@@ -1,14 +1,14 @@
 import Container from 'components/Container/Container';
 import LogForm from 'components/LogForm/LogForm';
-import { LoegRegStyles } from './styles/LogRegStyles';
-const LoginPage = () => {
+import { LogRegStyles } from './styles/LogRegStyles';
+const Login = () => {
   return (
-    <LoegRegStyles>
+    <LogRegStyles>
       <Container>
         <LogForm />
       </Container>
-    </LoegRegStyles>
+    </LogRegStyles>
   );
 };
 
-export default LoginPage;
+export default Login;

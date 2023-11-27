@@ -1,8 +1,7 @@
 import Container from 'components/Container/Container';
 import RegForm from 'components/RegForm/RegForm';
-// import { RegFormStyles } from 'components/RegForm/RegFormStyles.styled';
 
-const RegistrationPage = () => {
+const Registration = () => {
   return (
     <Container>
       <RegForm />
@@ -10,4 +9,4 @@ const RegistrationPage = () => {
   );
 };
 
-export default RegistrationPage;
+export default Registration;
