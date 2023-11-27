@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import operations from 'redux/auth/operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { RegFormStyles } from 'components/RegForm/RegFormStyles.styled';
 
 const LogForm = () => {

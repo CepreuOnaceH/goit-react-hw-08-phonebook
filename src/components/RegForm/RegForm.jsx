@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import operations from 'redux/auth/operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { getIsPending } from 'redux/auth/selectors';
-import { PiSpinnerGap } from 'react-icons/pi';
-import { MdAppRegistration } from 'react-icons/md';
-import { BiLogIn } from 'react-icons/bi';
+// import { getIsPending } from 'redux/auth/selectors';
+// import { PiSpinnerGap } from 'react-icons/pi';
+// import { MdAppRegistration } from 'react-icons/md';
+// import { BiLogIn } from 'react-icons/bi';
 import { RegFormStyles } from './RegFormStyles.styled';
 
 const RegForm = () => {
   const dispatch = useDispatch();
-  const isPending = useSelector(getIsPending);
+  // const isPending = useSelector(getIsPending);
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
   const [name, setName] = useState('');
